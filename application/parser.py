@@ -5,7 +5,7 @@ import logging
 import json
 from tokenizer import num_tokens_from_string
 
-class ResumeParser():
+class ResumeParsers():
     def __init__(self, OPENAI_API_KEY):
         # set GPT-3 API key from the environment vairable
         openai.api_key = OPENAI_API_KEY
@@ -81,7 +81,7 @@ class ResumeParser():
         prompt = self.prompt_questions + '\n' + pdf_str
 
         # Reference: https://platform.openai.com/docs/models/gpt-3-5
-        engine = 'text-davinci-002'
+        engine = 'gpt-3.5-turbo-instruct'
         max_tokens = 4097
 
         response = self.query_completion(prompt,engine=engine,max_tokens=max_tokens)

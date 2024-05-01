@@ -5,4 +5,4 @@ export RESUME_PARSER_PORT=5001
 
 cd application
 echo Parser Running at $RESUME_PARSER_HOST:$RESUME_PARSER_PORT
-python3 server.py
+py server.py
